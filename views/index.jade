@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.col-md-2
+				ul#online-users
+			div.col-md-10
+				ul#chat-sessions.nav.nav-tabs(role="tablist")
+					li#general-session.active
+						a(href="#general-room",role="tab",data-toggle="tab") General
+					li#new-chat-session
+						a(href="#last-chat-room",role="tab",data-toggle="tab")
+							i.fa.fa-plus
+				div#chat-rooms.tab-content
+					div#general-room.tab-pane.active
+						ul#messages.list-group
+					div#last-chat-room.tab-pane
+						h3 Creaste una sala de chat exitosamente, eres un ganador!
+	br
+	br
+	nav.navbar.navbar-default.navbar-fixed-bottom(role="navigation")
+		div.row
+			div.input-group.input-group-lg
+				div.col-lg-12
+					div.input-group.input-group-lg
+						span.input-group-btn
+							button#usuariobtn.btn.btn-default(type="button") Usuario
+						input#msg.form-control(type="text")
+						span.input-group-btn
+							button.btn.btn-default(type="button") Enviar
